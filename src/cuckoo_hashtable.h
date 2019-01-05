@@ -18,11 +18,16 @@ class CuckooHashTable {
     // initialize buckets to be of size [n_buckets, bucket_size]
     buckets_.resize(n_buckets_, std::vector<uint16_t>(bucket_size));
   }
+  int NumBuckets() const {
+    return n_buckets_;
+  }
 
-  // returns true if insertion was successful, false otherwise
-  bool insert(uint16_t fingerprint, int bucket_idx);
-  // deletes fingerprint at given index in given bucket
-  void remove(int bucket_idx, int fingerprint_idx);
+  // returns true if insertion was successful
+  bool Insert(uint16_t fingerprint, int bucket_idx);
+  // returns true if fingerprint at given index in given bucket was succesfully deleted
+  bool Remove(uint16_t fingerprint, int bucket_idx);
+  // returns true if the bucket at given index contains the fingerprint
+  bool Contains(uint16_t fingerprint, int bucket_idx);
 
 };
 
