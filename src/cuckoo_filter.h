@@ -9,13 +9,14 @@ namespace cuckoofilter {
 enum Status { Ok = 0, NotFound = 1, NotEnoughSpace = 2 };
 
 class CuckooFilter {
-  CuckooHashTable* table_;
+  CuckooHashTable *table_;
 
-  inline void GenerateFingerprintIndices(const std::string& item, int* bucket_idx1,
-                                   int* bucket_idx2, uint16_t *fingerprint) const{
+  inline void GenerateFingerprintIndices(const std::string &item,
+                                         int *bucket_idx1, int *bucket_idx2,
+                                         uint16_t *fingerprint) const {
     // partial-key cuckoo hashing
-    int bits_per_item = 4;  // how to define this dynamically?
-    const uint64_t hash = 0; // calculate the real hash here
+    int bits_per_item = 4;    // how to define this dynamically?
+    const uint64_t hash = 0;  // calculate the real hash here
     // generate fingerprint from item hash
     *fingerprint = hash & ((1ULL << bits_per_item) - 1);
     *fingerprint += (fingerprint == 0);
@@ -23,19 +24,18 @@ class CuckooFilter {
     *bucket_idx1 = (hash >> 32) & (table_->NumBuckets() - 1);
     // generate index2 from index1 and fingerprint
     // 0x5bd1e995 is the hash constant from MurmurHash2
-    *bucket_idx2 = (*bucket_idx1 ^ (*fingerprint * 0x5bd1e995)) & (table_->NumBuckets() - 1);
+    *bucket_idx2 = (*bucket_idx1 ^ (*fingerprint * 0x5bd1e995)) &
+                   (table_->NumBuckets() - 1);
   }
 
  public:
-  CuckooFilter(const int capacity) {
-    table_ = new CuckooHashTable(capacity);
-  }
-  Status Insert(const std::string& item);
-  Status Delete(const std::string& item);
-  Status Lookup(const std::string& item);
+  CuckooFilter(const int capacity) { table_ = new CuckooHashTable(capacity); }
+  Status Insert(const std::string &item);
+  Status Delete(const std::string &item);
+  Status Lookup(const std::string &item);
 };
 
-Status CuckooFilter::Insert(const std::string& item){
+Status CuckooFilter::Insert(const std::string &item) {
   uint16_t fingerprint;
   int bucket_idx1, bucket_idx2;
 
@@ -43,19 +43,18 @@ Status CuckooFilter::Insert(const std::string& item){
 
   if (table_->Insert(fingerprint, bucket_idx1)) {
     return Ok;
-  }
-  else if (table_->Insert(fingerprint, bucket_idx2)) {
+  } else if (table_->Insert(fingerprint, bucket_idx2)) {
     return Ok;
   }
   // must relocate existing items
-  /* 
-    TO-DO 
+  /*
+    TO-DO
   */
   // HashTable is considered full
   return NotEnoughSpace;
 }
 
-Status CuckooFilter::Lookup(const std::string& item){
+Status CuckooFilter::Lookup(const std::string &item) {
   uint16_t fingerprint;
   int bucket_idx1, bucket_idx2;
 
@@ -63,15 +62,14 @@ Status CuckooFilter::Lookup(const std::string& item){
 
   if (table_->Contains(fingerprint, bucket_idx1)) {
     return Ok;
-  }
-  else if (table_->Contains(fingerprint, bucket_idx2)) {
+  } else if (table_->Contains(fingerprint, bucket_idx2)) {
     return Ok;
   }
 
   return NotFound;
 }
 
-Status CuckooFilter::Delete(const std::string& item){
+Status CuckooFilter::Delete(const std::string &item) {
   uint16_t fingerprint;
   int bucket_idx1, bucket_idx2;
 
@@ -79,11 +77,10 @@ Status CuckooFilter::Delete(const std::string& item){
 
   if (table_->Remove(fingerprint, bucket_idx1)) {
     return Ok;
-  }
-  else if (table_->Remove(fingerprint, bucket_idx2)) {
+  } else if (table_->Remove(fingerprint, bucket_idx2)) {
     return Ok;
   }
-  
+
   return NotFound;
 }
 }  // namespace cuckoofilter
