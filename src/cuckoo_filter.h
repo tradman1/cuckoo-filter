@@ -8,10 +8,11 @@ namespace cuckoofilter {
 
 enum Status { Ok = 0, NotFound = 1, NotEnoughSpace = 2 };
 
+template <class InputType>
 class CuckooFilter {
   CuckooHashTable *table_;
 
-  inline void GenerateFingerprintIndices(const std::string &item,
+  inline void GenerateFingerprintIndices(const InputType &item,
                                          int *bucket_idx1, int *bucket_idx2,
                                          uint16_t *fingerprint) const {
     // partial-key cuckoo hashing
@@ -30,12 +31,13 @@ class CuckooFilter {
 
  public:
   CuckooFilter(const int capacity) { table_ = new CuckooHashTable(capacity); }
-  Status Insert(const std::string &item);
-  Status Delete(const std::string &item);
-  Status Lookup(const std::string &item);
+  Status Insert(const InputType &item);
+  Status Delete(const InputType &item);
+  Status Lookup(const InputType &item);
 };
 
-Status CuckooFilter::Insert(const std::string &item) {
+template <class InputType>
+Status CuckooFilter<InputType>::Insert(const InputType &item) {
   uint16_t fingerprint;
   int bucket_idx1, bucket_idx2;
 
@@ -54,7 +56,8 @@ Status CuckooFilter::Insert(const std::string &item) {
   return NotEnoughSpace;
 }
 
-Status CuckooFilter::Lookup(const std::string &item) {
+template <class InputType>
+Status CuckooFilter<InputType>::Lookup(const InputType &item) {
   uint16_t fingerprint;
   int bucket_idx1, bucket_idx2;
 
@@ -69,7 +72,8 @@ Status CuckooFilter::Lookup(const std::string &item) {
   return NotFound;
 }
 
-Status CuckooFilter::Delete(const std::string &item) {
+template <class InputType>
+Status CuckooFilter<InputType>::Delete(const InputType &item) {
   uint16_t fingerprint;
   int bucket_idx1, bucket_idx2;
 
