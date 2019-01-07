@@ -56,8 +56,8 @@ Status CuckooFilter<InputType, HashType>::Insert(const InputType &item) {
     return Ok;
   }
   // must relocate existing items
-  for (uint32_t n = 0; n < kMaxCuckooCount; n++) {
-    fingerprint = table->SwapEntries(fingerprint, bucket_idx1);
+  for (uint32_t n = 0; n < MaxNumKicks; n++) {
+    fingerprint = table_->SwapEntries(fingerprint, bucket_idx1);
     bucket_idx1 = AltIndex(bucket_idx1, fingerprint);
     if (table_->Insert(fingerprint, bucket_idx1)) {
       return Ok;
