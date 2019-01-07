@@ -22,11 +22,12 @@ class CuckooHashTable {
 
   // returns true if insertion was successful
   bool Insert(uint16_t fingerprint, int bucket_idx);
-  // returns true if fingerprint at given index in given bucket was succesfully
-  // deleted
+  // returns true if fingerprint at given index in given bucket was deleted
   bool Remove(uint16_t fingerprint, int bucket_idx);
   // returns true if the bucket at given index contains the fingerprint
   bool Contains(uint16_t fingerprint, int bucket_idx);
+  // insert new fingerprint in bucket_idx and return the old fingerprint
+  uint16_t SwapEntries(uint16_t fingerprint, int bucket_idx);
 };
 
 };  // namespace cuckoofilter
