@@ -16,7 +16,7 @@ class CuckooHashTable {
  public:
   explicit CuckooHashTable(const int capacity) : capacity_(capacity) {
     n_buckets_ = capacity / bucket_size + 1;
-    // initialize buckets to be of size [n_buckets, bucket_size]
+    // create n_buckets buckets
     buckets_.resize(n_buckets_, std::unordered_set<uint16_t>());
   }
   int NumBuckets() const { return n_buckets_; }
