@@ -8,8 +8,7 @@ bool CuckooHashTable::Insert(uint16_t fingerprint, int bucket_idx) {
   if (buckets_[bucket_idx].size() >= bucket_size) {
     return false;
   }
-  buckets_[bucket_idx].insert(fingerprint);
-  return true;
+  return buckets_[bucket_idx].insert(fingerprint).second;
 }
 
 bool CuckooHashTable::Remove(uint16_t fingerprint, int bucket_idx) {
