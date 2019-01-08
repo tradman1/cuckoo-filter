@@ -1,6 +1,5 @@
 #include <cstdint>
 #include <random>
-#include <iostream>
 #include "cuckoo_hashtable.h"
 
 namespace cuckoofilter {
@@ -27,9 +26,8 @@ bool CuckooHashTable::Contains(uint16_t fingerprint, int bucket_idx) {
 }
 
 uint16_t CuckooHashTable::SwapEntries(uint16_t fingerprint, int bucket_idx) {
-  std::vector<uint16_t> bucket_cpy;
+  std::vector<uint16_t> bucket_cpy(buckets_[bucket_idx].size());
   std::copy(buckets_[bucket_idx].begin(), buckets_[bucket_idx].end(), bucket_cpy.begin());
-  std::cout << "Created vector copy" << std::endl;
 
   // random generator
   std::random_device rd;     // only used once to initialise (seed) engine
