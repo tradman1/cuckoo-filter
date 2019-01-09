@@ -21,6 +21,10 @@ class CuckooHashTable {
   }
   int NumBuckets() const { return n_buckets_; }
 
+  int size() const {return buckets_.size();};
+
+  int capacity() const {return buckets_.capacity();};
+
   // returns true if insertion was successful
   bool Insert(uint16_t fingerprint, int bucket_idx);
   // returns true if fingerprint at given index in given bucket was deleted
