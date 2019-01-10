@@ -23,13 +23,14 @@ int main() {
   std::cout << ct.size() << std::endl;
   std::cout << ct.capacity() << std::endl;
   */
-  size_t total_items = 10000;  // 1000000;
+  size_t total_items = 1000000;
   CuckooFilter<size_t, TwoIndependentMultiplyShift> filter(total_items);
 
   // Insert items to this cuckoo filter
   size_t num_inserted = 0;
   for (size_t i = 0; i < total_items; i++, num_inserted++) {
     if (filter.Insert(i) != Ok) {
+      std::cout << "inserted " << 100.0 * num_inserted/total_items << "% items" << std::endl;
       break;
     }
   }
