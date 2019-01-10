@@ -17,24 +17,23 @@ class CuckooFilter {
   HashType hasher_;
 
   inline void GenerateFingerprintIndices(const InputType &item,
-                                         int *bucket_idx1, int *bucket_idx2,
+                                         uint32_t *bucket_idx1, uint32_t *bucket_idx2,
                                          uint32_t *fingerprint) const {
     // partial-key cuckoo hashing
     const uint64_t hash = hasher_(item);
     // fingerprint is a bit string derived from the item using a hash function
-    int bits_per_item = 16;  // TO-DO define this dynamically
+    int bits_per_item = 32;  // TO-DO define this dynamically
     *fingerprint = hash % ((1ULL << bits_per_item) - 1);
     *fingerprint += (*fingerprint == 0);
     // index1 = hash(item)
-    *bucket_idx1 = (hash >> 32) % (table_->NumBuckets() - 1);
+    *bucket_idx1 = (hash >> 32);
     // index2 = index1 xor hash(fingerprint)
     *bucket_idx2 = AltIndex(*bucket_idx1, *fingerprint);
   }
 
-  inline int AltIndex(const int index, const uint32_t fingerprint) const {
+  inline uint32_t AltIndex(const uint32_t index, const uint32_t fingerprint) const {
     // 0x5bd1e995 is the hash constant from MurmurHash2
-    return ((uint32_t)(index ^ (fingerprint * 0x5bd1e995))) %
-           (table_->NumBuckets() - 1);
+    return ((uint32_t)(index ^ (fingerprint * (uint32_t)0x5bd1e995)));
   }
 
  public:
@@ -47,7 +46,7 @@ class CuckooFilter {
 template <class InputType, class HashType>
 Status CuckooFilter<InputType, HashType>::Insert(const InputType &item) {
   uint32_t fingerprint;
-  int bucket_idx1, bucket_idx2;
+  uint32_t bucket_idx1, bucket_idx2;
 
   GenerateFingerprintIndices(item, &bucket_idx1, &bucket_idx2, &fingerprint);
 
@@ -71,7 +70,7 @@ Status CuckooFilter<InputType, HashType>::Insert(const InputType &item) {
 template <class InputType, class HashType>
 Status CuckooFilter<InputType, HashType>::Lookup(const InputType &item) {
   uint32_t fingerprint;
-  int bucket_idx1, bucket_idx2;
+  uint32_t bucket_idx1, bucket_idx2;
 
   GenerateFingerprintIndices(item, &bucket_idx1, &bucket_idx2, &fingerprint);
 
@@ -94,7 +93,7 @@ Status CuckooFilter<InputType, HashType>::Lookup(const InputType &item) {
 template <class InputType, class HashType>
 Status CuckooFilter<InputType, HashType>::Delete(const InputType &item) {
   uint32_t fingerprint;
-  int bucket_idx1, bucket_idx2;
+  uint32_t bucket_idx1, bucket_idx2;
 
   GenerateFingerprintIndices(item, &bucket_idx1, &bucket_idx2, &fingerprint);
 
