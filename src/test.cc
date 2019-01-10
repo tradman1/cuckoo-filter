@@ -2,7 +2,6 @@
 #include <assert.h>
 #include <iostream>
 #include "cuckoo_filter.h"
-#include "cuckoo_hashtable.cc"
 #include "cuckoo_hashtable.h"
 #include "hashutil.h"
 
