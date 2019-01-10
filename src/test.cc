@@ -9,20 +9,6 @@
 using namespace cuckoofilter;
 
 int main() {
-  /*
-  __int128 t = 1234567890;
-  StdStringHash hasher;
-  DJB2Hash hasher1;
-  std::string s = "Hello, World!";
-
-  std::cout << s << std::endl;
-  std::cout << hasher(s) << std::endl;
-  std::cout << hasher1(s) << std::endl;
-
-  CuckooHashTable ct(1300);
-  std::cout << ct.size() << std::endl;
-  std::cout << ct.capacity() << std::endl;
-  */
   size_t total_items = 1000000;
   CuckooFilter<size_t, TwoIndependentMultiplyShift> filter(total_items);
 
@@ -30,7 +16,8 @@ int main() {
   size_t num_inserted = 0;
   for (size_t i = 0; i < total_items; i++, num_inserted++) {
     if (filter.Insert(i) != Ok) {
-      std::cout << "inserted " << 100.0 * num_inserted/total_items << "% items" << std::endl;
+      std::cout << "inserted " << 100.0 * num_inserted / total_items
+                << "% items" << std::endl;
       break;
     }
   }
