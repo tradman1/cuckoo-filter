@@ -1,8 +1,8 @@
 #ifndef CUCKOO_FILTER_CUCKOO_HASHTABLE_H_
 #define CUCKOO_FILTER_CUCKOO_HASHTABLE_H_
 
-#include <vector>
 #include <unordered_set>
+#include <vector>
 
 namespace cuckoofilter {
 
@@ -21,9 +21,9 @@ class CuckooHashTable {
   }
   int NumBuckets() const { return n_buckets_; }
 
-  int size() const {return buckets_.size();};
+  int size() const { return buckets_.size(); };
 
-  int capacity() const {return buckets_.capacity();};
+  int capacity() const { return buckets_.capacity(); };
 
   // returns true if insertion was successful
   bool Insert(uint32_t fingerprint, int bucket_idx);

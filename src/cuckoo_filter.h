@@ -33,7 +33,8 @@ class CuckooFilter {
 
   inline int AltIndex(const int index, const uint32_t fingerprint) const {
     // 0x5bd1e995 is the hash constant from MurmurHash2
-    return ((uint32_t)(index ^ (fingerprint * 0x5bd1e995))) % (table_->NumBuckets() - 1);
+    return ((uint32_t)(index ^ (fingerprint * 0x5bd1e995))) %
+           (table_->NumBuckets() - 1);
   }
 
  public:
@@ -51,10 +52,8 @@ Status CuckooFilter<InputType, HashType>::Insert(const InputType &item) {
   GenerateFingerprintIndices(item, &bucket_idx1, &bucket_idx2, &fingerprint);
 
   if (table_->Insert(fingerprint, bucket_idx1)) {
-    //std::cout << "inserted into bucket1" << std::endl;
     return Ok;
   } else if (table_->Insert(fingerprint, bucket_idx2)) {
-    //std::cout << "inserted into bucket2" << std::endl;
     return Ok;
   }
   // must relocate existing items
@@ -62,7 +61,6 @@ Status CuckooFilter<InputType, HashType>::Insert(const InputType &item) {
     fingerprint = table_->SwapEntries(fingerprint, bucket_idx1);
     bucket_idx1 = AltIndex(bucket_idx1, fingerprint);
     if (table_->Insert(fingerprint, bucket_idx1)) {
-      //std::cout << "relocated " << n << " items" << std::endl;
       return Ok;
     }
   }
@@ -77,10 +75,11 @@ Status CuckooFilter<InputType, HashType>::Lookup(const InputType &item) {
 
   GenerateFingerprintIndices(item, &bucket_idx1, &bucket_idx2, &fingerprint);
 
-  std::cout << " bucket_idx1 is " << bucket_idx1 << " and fingerprint is " <<  fingerprint << std::endl;
-  std::cout << " bucket_idx2 is " << bucket_idx1 << std::endl;
-  std::cout << " AltIndex is " << AltIndex(bucket_idx2, fingerprint) << std::endl;
-  
+  std::cout << " bucket_idx1 is " << bucket_idx1 << " and fingerprint is "
+            << fingerprint << std::endl;
+  std::cout << " bucket_idx2 is " << bucket_idx2 << " and its AltIndex is "
+            << AltIndex(bucket_idx2, fingerprint) << std::endl;
+
   assert(bucket_idx1 == AltIndex(bucket_idx2, fingerprint));
 
   if (table_->Contains(fingerprint, bucket_idx1)) {
