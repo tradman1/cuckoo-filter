@@ -23,7 +23,7 @@ class CuckooFilter {
     // partial-key cuckoo hashing
     const uint64_t hash = hasher_(item);
     // fingerprint is a bit string derived from the item using a hash function
-    int bits_per_item = 16;  // TO-DO define this dynamically
+    int bits_per_item = 32;  // TO-DO define this dynamically
     *fingerprint = hash % ((1ULL << bits_per_item) - 1);
     *fingerprint += (*fingerprint == 0);
     // index1 = hash(item)
@@ -31,31 +31,31 @@ class CuckooFilter {
     // index2 = index1 xor hash(fingerprint)
     *bucket_idx2 = AltIndex(*bucket_idx1, *fingerprint);
 
-    std::cout << " fingerprint is " << *fingerprint << std::endl;
-    std::cout << " bucket_idx1 is " << *bucket_idx1 << std::endl;
-    std::cout << " bucket_idx1 mod is " << *bucket_idx1 % table_->NumBuckets()
-              << std::endl;
-    std::cout << " bucket_idx2 is " << *bucket_idx2 << std::endl;
-    std::cout << " bucket_idx2 mod is " << *bucket_idx2 % table_->NumBuckets()
-              << std::endl;
+    // std::cout << " fingerprint is " << *fingerprint << std::endl;
+    // std::cout << " bucket_idx1 is " << *bucket_idx1 << std::endl;
+    // std::cout << " bucket_idx1 mod is " << *bucket_idx1 % table_->NumBuckets()
+              // << std::endl;
+    // std::cout << " bucket_idx2 is " << *bucket_idx2 << std::endl;
+    // std::cout << " bucket_idx2 mod is " << *bucket_idx2 % table_->NumBuckets()
+              // << std::endl;
 
     size_t idx1 = AltIndex(*bucket_idx2, *fingerprint);
-    std::cout << " AltIndex of bucket_idx2 is " << idx1 << " and should be "
-              << *bucket_idx1 << std::endl;
-    std::cout << " AltIndex of bucket_idx2 mod is "
-              << idx1 % table_->NumBuckets() << " and should be "
-              << *bucket_idx1 % table_->NumBuckets() << std::endl;
+    // std::cout << " AltIndex of bucket_idx2 is " << idx1 << " and should be "
+              // << *bucket_idx1 << std::endl;
+    // std::cout << " AltIndex of bucket_idx2 mod is "
+              // << idx1 % table_->NumBuckets() << " and should be "
+              // << *bucket_idx1 % table_->NumBuckets() << std::endl;
 
     size_t idx2 = AltIndex(*bucket_idx1, *fingerprint);
-    std::cout << " AltIndex of bucket_idx1 is " << idx2 << " and should be "
-              << *bucket_idx2 << std::endl;
-    std::cout << " AltIndex of bucket_idx1 mod is "
-              << idx2 % table_->NumBuckets() << " and should be "
-              << *bucket_idx2 % table_->NumBuckets() << std::endl;
+    // std::cout << " AltIndex of bucket_idx1 is " << idx2 << " and should be "
+              // << *bucket_idx2 << std::endl;
+    // std::cout << " AltIndex of bucket_idx1 mod is "
+              // << idx2 % table_->NumBuckets() << " and should be "
+              // << *bucket_idx2 % table_->NumBuckets() << std::endl;
 
-    std::cout << " asserting ... ";
+    // std::cout << " asserting ... ";
     assert(*bucket_idx1 == AltIndex(*bucket_idx2, *fingerprint));
-    std::cout << " ... passed" << std::endl;
+    // std::cout << " ... passed" << std::endl;
   }
 
   inline size_t AltIndex(const size_t index, const uint32_t fingerprint) const {
@@ -69,6 +69,9 @@ class CuckooFilter {
   Status Insert(const InputType &item);
   Status Delete(const InputType &item);
   Status Lookup(const InputType &item);
+  void PrintTable() {
+    table_->printTable();
+  }
 };
 
 template <class InputType, class HashType>
