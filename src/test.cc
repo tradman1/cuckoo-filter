@@ -44,7 +44,7 @@ int main() {
   std::cout << "false positive rate is "
             << 100.0 * false_queries / total_queries << "%\n";
 
-  return 0;
+  std::cout << "PASSED THE TEST!!!" << std::endl;
 
   return 0;
 }
