@@ -4,17 +4,14 @@
 
 namespace cuckoofilter {
 
-bool CuckooHashTable::Insert(uint32_t fingerprint, uint32_t bucket_idx) {
-  if (buckets_.find(bucket_idx) != buckets_.end()) {
-    if (buckets_[bucket_idx].size() >= bucket_size) {
-      return false;
-    }
+bool CuckooHashTable::Insert(uint32_t fingerprint, int bucket_idx) {
+  if (buckets_[bucket_idx].size() >= bucket_size) {
+    return false;
   }
   return buckets_[bucket_idx].insert(fingerprint).second;
 }
 
-bool CuckooHashTable::Remove(uint32_t fingerprint, uint32_t bucket_idx) {
-  if (buckets_.find(bucket_idx) == buckets_.end()) return false;
+bool CuckooHashTable::Remove(uint32_t fingerprint, int bucket_idx) {
   std::unordered_set<uint32_t> bucket = buckets_[bucket_idx];
   if (buckets_[bucket_idx].find(fingerprint) != buckets_[bucket_idx].end()) {
     buckets_[bucket_idx].erase(fingerprint);
@@ -24,12 +21,11 @@ bool CuckooHashTable::Remove(uint32_t fingerprint, uint32_t bucket_idx) {
   }
 }
 
-bool CuckooHashTable::Contains(uint32_t fingerprint, uint32_t bucket_idx) {
-  if (buckets_.find(bucket_idx) == buckets_.end()) return false;
+bool CuckooHashTable::Contains(uint32_t fingerprint, int bucket_idx) {
   return buckets_[bucket_idx].find(fingerprint) != buckets_[bucket_idx].end();
 }
 
-uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, uint32_t bucket_idx) {
+uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, int bucket_idx) {
   std::vector<uint32_t> bucket_cpy(buckets_[bucket_idx].size());
   std::copy(buckets_[bucket_idx].begin(), buckets_[bucket_idx].end(),
             bucket_cpy.begin());
