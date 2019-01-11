@@ -4,14 +4,16 @@
 
 namespace cuckoofilter {
 
-bool CuckooHashTable::Insert(uint32_t fingerprint, int bucket_idx) {
+bool CuckooHashTable::Insert(uint32_t fingerprint, size_t bucket_idx) {
+  bucket_idx %= this->NumBuckets();
   if (buckets_[bucket_idx].size() >= bucket_size) {
     return false;
   }
   return buckets_[bucket_idx].insert(fingerprint).second;
 }
 
-bool CuckooHashTable::Remove(uint32_t fingerprint, int bucket_idx) {
+bool CuckooHashTable::Remove(uint32_t fingerprint, size_t bucket_idx) {
+  bucket_idx %= this->NumBuckets();
   std::unordered_set<uint32_t> bucket = buckets_[bucket_idx];
   if (buckets_[bucket_idx].find(fingerprint) != buckets_[bucket_idx].end()) {
     buckets_[bucket_idx].erase(fingerprint);
@@ -21,11 +23,13 @@ bool CuckooHashTable::Remove(uint32_t fingerprint, int bucket_idx) {
   }
 }
 
-bool CuckooHashTable::Contains(uint32_t fingerprint, int bucket_idx) {
+bool CuckooHashTable::Contains(uint32_t fingerprint, size_t bucket_idx) {
+  bucket_idx %= this->NumBuckets();
   return buckets_[bucket_idx].find(fingerprint) != buckets_[bucket_idx].end();
 }
 
-uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, int bucket_idx) {
+uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, size_t bucket_idx) {
+  bucket_idx %= this->NumBuckets();
   std::vector<uint32_t> bucket_cpy(buckets_[bucket_idx].size());
   std::copy(buckets_[bucket_idx].begin(), buckets_[bucket_idx].end(),
             bucket_cpy.begin());
@@ -36,7 +40,7 @@ uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, int bucket_idx) {
       rd());  // random-number engine used (Mersenne-Twister in this case)
   std::uniform_int_distribution<int> uni(
       0, buckets_[bucket_idx].size() - 1);  // guaranteed unbiased
-  int swap_idx = uni(rng);
+  size_t swap_idx = uni(rng);
 
   uint32_t old_entry = bucket_cpy[swap_idx];
   buckets_[bucket_idx].erase(old_entry);
