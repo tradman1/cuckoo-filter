@@ -3,6 +3,7 @@
 
 #include <unordered_set>
 #include <vector>
+#include <iostream>
 
 namespace cuckoofilter {
 
@@ -17,7 +18,7 @@ class CuckooHashTable {
   explicit CuckooHashTable(const size_t capacity) : capacity_(capacity) {
     n_buckets_ = capacity / bucket_size + 1;
     // create n_buckets buckets
-    buckets_.resize(n_buckets_, std::vector<uint32_t>(bucket_size));
+    buckets_.resize(n_buckets_);
   }
   size_t NumBuckets() const { return n_buckets_; }
 

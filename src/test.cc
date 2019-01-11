@@ -2,14 +2,13 @@
 #include <assert.h>
 #include <iostream>
 #include "cuckoo_filter.h"
-#include "cuckoo_hashtable.cc"
 #include "cuckoo_hashtable.h"
 #include "hashutil.h"
 
 using namespace cuckoofilter;
 
 int main() {
-  size_t total_items = 1000000;
+  size_t total_items = 100;
   CuckooFilter<size_t, TwoIndependentMultiplyShift> filter(total_items);
 
   // Insert items to this cuckoo filter
@@ -22,6 +21,9 @@ int main() {
       break;
     }
   }
+
+  std::cout << "Print table" << std::endl;
+  filter.PrintTable();
 
   // Check if previously inserted items are in the filter, expected
   // true for all items
