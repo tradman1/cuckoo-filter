@@ -8,8 +8,8 @@
 using namespace cuckoofilter;
 
 int main() {
-  size_t total_items = 100;
-  CuckooFilter<size_t, TwoIndependentMultiplyShift> filter(total_items);
+  size_t total_items = 10000;
+  CuckooFilter<size_t, SimpleTabulation> filter(total_items);
 
   // Insert items to this cuckoo filter
   size_t num_inserted = 0;
@@ -21,6 +21,8 @@ int main() {
       break;
     }
   }
+
+  assert(num_inserted >= 1);
 
   std::cout << "Print table" << std::endl;
   filter.PrintTable();
