@@ -1,9 +1,15 @@
-#ifndef CUCKOO_FILTER_CUCKOO_HASHTABLE_H_
-#define CUCKOO_FILTER_CUCKOO_HASHTABLE_H_
-
-#include <unordered_set>
-#include <vector>
+#include <stdint.h>
+#include <stdlib.h>
+#include <sys/types.h>
 #include <iostream>
+#include <vector>
+
+#include <climits>  //#include <openssl/evp.h>
+#include <functional>
+#include <random>
+#include <string>
+
+#pragma once
 
 namespace cuckoofilter {
 
@@ -14,6 +20,7 @@ class CuckooHashTable {
   size_t n_buckets_;
   std::vector<std::vector<uint32_t>> buckets_;
 
+  // http://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2Float
   inline size_t upperpower2(size_t x) {
     x--;
     x |= x >> 1;
@@ -23,38 +30,15 @@ class CuckooHashTable {
     x |= x >> 16;
     x |= x >> 32;
     x++;
-  return x;
-}
-
+    return x;
+  }
 
  public:
-  explicit CuckooHashTable(size_t capacity) : capacity_(capacity) {
-    capacity = upperpower2(capacity); // mandatory for cuckoo filter
-    n_buckets_ = capacity / bucket_size;
-    // create n_buckets buckets
-    buckets_.resize(n_buckets_);
-  }
-  size_t NumBuckets() const { return n_buckets_; }
-
-  size_t size() const { return buckets_.size(); };
-
-  size_t capacity() const { return buckets_.capacity(); };
-
-  void printTable() {
-    // for (std::vector<std::unordered_set<uint32_t> >::iterator it =
-    // buckets_.begin(); it != buckets_.end(); it++) {
-    for (int i = 0; i < buckets_.size(); i++) {
-      std::cout << i << ": ";
-      // for (auto x : buckets_) {
-      // if (x.size() > 0) {
-      if (buckets_[i].size() > 0) {
-        for (auto y : buckets_[i]) {
-          std::cout << y << " ";
-        }
-        std::cout << std::endl;
-      }
-    }
-  };
+  CuckooHashTable(size_t capacity);
+  size_t NumBuckets();
+  size_t size();
+  size_t capacity();
+  void printTable();
 
   // returns true if insertion was successful
   bool Insert(uint32_t fingerprint, size_t bucket_idx);
@@ -66,6 +50,4 @@ class CuckooHashTable {
   uint32_t SwapEntries(uint32_t fingerprint, size_t bucket_idx);
 };
 
-};  // namespace cuckoofilter
-
-#endif
+}  // namespace cuckoofilter
