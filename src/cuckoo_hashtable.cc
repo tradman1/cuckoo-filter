@@ -37,8 +37,9 @@ bool CuckooHashTable::Contains(uint32_t fingerprint, size_t bucket_idx) {
 uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, size_t bucket_idx) {
   bucket_idx %= n_buckets_;
 
-  uint32_t old_entry = buckets_[bucket_idx].at(0);
-  buckets_[bucket_idx].at(0) = fingerprint;
+  size_t i = std::rand() % buckets_[bucket_idx].size();
+  uint32_t old_entry = buckets_[bucket_idx].at(i);
+  buckets_[bucket_idx].at(i) = fingerprint;
   return old_entry;
 }
 }  // namespace cuckoofilter

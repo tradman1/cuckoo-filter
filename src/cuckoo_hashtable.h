@@ -14,9 +14,23 @@ class CuckooHashTable {
   size_t n_buckets_;
   std::vector<std::vector<uint32_t>> buckets_;
 
+  inline size_t upperpower2(size_t x) {
+    x--;
+    x |= x >> 1;
+    x |= x >> 2;
+    x |= x >> 4;
+    x |= x >> 8;
+    x |= x >> 16;
+    x |= x >> 32;
+    x++;
+  return x;
+}
+
+
  public:
-  explicit CuckooHashTable(const size_t capacity) : capacity_(capacity) {
-    n_buckets_ = capacity / bucket_size + 1;
+  explicit CuckooHashTable(size_t capacity) : capacity_(capacity) {
+    capacity = upperpower2(capacity); // mandatory for cuckoo filter
+    n_buckets_ = capacity / bucket_size;
     // create n_buckets buckets
     buckets_.resize(n_buckets_);
   }
