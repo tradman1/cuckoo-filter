@@ -1,8 +1,44 @@
 #include "cuckoo_hashtable.h"
+#include <stdint.h>
+#include <stdlib.h>
+#include <sys/types.h>
 #include <cstdint>
 #include <random>
 
+#include <climits>  //#include <openssl/evp.h>
+#include <functional>
+#include <random>
+#include <string>
+
 namespace cuckoofilter {
+
+CuckooHashTable::CuckooHashTable(size_t capacity) : capacity_(capacity) {
+  capacity = upperpower2(capacity);  // mandatory for cuckoo filter
+  n_buckets_ = capacity / bucket_size;
+  buckets_.resize(n_buckets_);  // allocate space for n_buckets buckets
+}
+
+size_t CuckooHashTable::NumBuckets() { return n_buckets_; }
+
+size_t CuckooHashTable::size() { return buckets_.size(); };
+
+size_t CuckooHashTable::capacity() { return buckets_.capacity(); };
+
+void CuckooHashTable::printTable() {
+  // for (std::vector<std::unordered_set<uint32_t> >::iterator it =
+  // buckets_.begin(); it != buckets_.end(); it++) {
+  for (int i = 0; i < buckets_.size(); i++) {
+    std::cout << i << ": ";
+    // for (auto x : buckets_) {
+    // if (x.size() > 0) {
+    if (buckets_[i].size() > 0) {
+      for (auto y : buckets_[i]) {
+        std::cout << y << " ";
+      }
+      std::cout << std::endl;
+    }
+  }
+};
 
 bool CuckooHashTable::Insert(uint32_t fingerprint, size_t bucket_idx) {
   bucket_idx %= n_buckets_;

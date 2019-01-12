@@ -2,14 +2,17 @@
 #include <assert.h>
 #include <iostream>
 #include "cuckoo_filter.h"
+#include "cuckoo_hasher.h"
 #include "cuckoo_hashtable.h"
-#include "hashutil.h"
+#include "cuckoo_filter.cc"
+//#include "cuckoo_hasher.cc"
+//#include "cuckoo_hashtable.cc"
 
 using namespace cuckoofilter;
 
 int main() {
-  size_t total_items = 10000;
-  CuckooFilter<size_t, SimpleTabulation> filter(total_items);
+  size_t total_items = 1000000;
+  CuckooFilter<size_t> filter(total_items);
 
   // Insert items to this cuckoo filter
   size_t num_inserted = 0;
@@ -17,7 +20,8 @@ int main() {
     std::cout << "inserting item " << i << std::endl;
     if (filter.Insert(i) != Ok) {
       std::cout << "inserted " << 100.0 * num_inserted / total_items
-                << "% items %\n" << std::endl;
+                << "% items %\n"
+                << std::endl;
       break;
     }
   }
