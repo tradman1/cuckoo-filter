@@ -1,12 +1,9 @@
-//#include <openssl/evp.h>
 #include <assert.h>
 #include <iostream>
 #include "cuckoo_filter.h"
 #include "cuckoo_hasher.h"
 #include "cuckoo_hashtable.h"
 #include "cuckoo_filter.cc"
-//#include "cuckoo_hasher.cc"
-//#include "cuckoo_hashtable.cc"
 
 using namespace cuckoofilter;
 
