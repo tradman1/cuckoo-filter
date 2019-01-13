@@ -1,11 +1,13 @@
 #include "cuckoo_hashtable.h"
+#include <assert.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <cstdint>
 #include <random>
 
-#include <climits>  //#include <openssl/evp.h>
+#include <climits>
+//#include <openssl/evp.h>
 #include <functional>
 #include <random>
 #include <string>
@@ -13,8 +15,15 @@
 namespace cuckoofilter {
 
 CuckooHashTable::CuckooHashTable(size_t capacity) : capacity_(capacity) {
-  capacity = upperpower2(capacity);  // mandatory for cuckoo filter
-  n_buckets_ = capacity / bucket_size;
+  // for cuckoo filter to work, it must have number of buckets that is power of
+  // 2
+  n_buckets_ = upperpower2((uint64_t)capacity / bucket_size);
+  double load_factor = (double)capacity / n_buckets_ / bucket_size;
+  if (load_factor > 0.95) {
+    n_buckets_ *= 2;
+  }
+  std::cout << "Load factor is " << load_factor << std::endl;
+  std::cout << "Number of buckets is: " << n_buckets_ << std::endl;
   buckets_.resize(n_buckets_);  // allocate space for n_buckets buckets
 }
 
@@ -42,6 +51,7 @@ void CuckooHashTable::printTable() {
 
 bool CuckooHashTable::Insert(uint32_t fingerprint, size_t bucket_idx) {
   bucket_idx %= n_buckets_;
+  // bucket_idx = bucket_idx & (n_buckets_ - 1);
   if (buckets_[bucket_idx].size() >= bucket_size) {
     return false;
   }
@@ -51,6 +61,7 @@ bool CuckooHashTable::Insert(uint32_t fingerprint, size_t bucket_idx) {
 
 bool CuckooHashTable::Remove(uint32_t fingerprint, size_t bucket_idx) {
   bucket_idx %= n_buckets_;
+  // bucket_idx = bucket_idx & (n_buckets_ - 1);
   for (size_t i; i < buckets_[bucket_idx].size(); i++) {
     if (buckets_[bucket_idx][i] == fingerprint) {
       buckets_[bucket_idx].erase(buckets_[bucket_idx].begin() + i);
@@ -62,6 +73,7 @@ bool CuckooHashTable::Remove(uint32_t fingerprint, size_t bucket_idx) {
 
 bool CuckooHashTable::Contains(uint32_t fingerprint, size_t bucket_idx) {
   bucket_idx %= n_buckets_;
+  // bucket_idx = bucket_idx & (n_buckets_ - 1);
   for (auto entry : buckets_[bucket_idx]) {
     if (entry == fingerprint) {
       return true;
@@ -71,11 +83,18 @@ bool CuckooHashTable::Contains(uint32_t fingerprint, size_t bucket_idx) {
 }
 
 uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, size_t bucket_idx) {
+  // std::cout << "number of buckets is " << n_buckets_ << std::endl;
+  // assert(bucket_idx % n_buckets_ == bucket_idx & (n_buckets_ - 1));
+  // bucket_idx = bucket_idx & (n_buckets_ - 1);
   bucket_idx %= n_buckets_;
 
   size_t i = std::rand() % buckets_[bucket_idx].size();
   uint32_t old_entry = buckets_[bucket_idx].at(i);
   buckets_[bucket_idx].at(i) = fingerprint;
+
+  std::cout << "swapping fingerprint " << fingerprint << " with " << old_entry
+            << " at index " << bucket_idx << " whose mod is "
+            << bucket_idx % NumBuckets() << std::endl;
   return old_entry;
 }
 }  // namespace cuckoofilter
