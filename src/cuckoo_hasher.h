@@ -3,7 +3,6 @@
 #include <sys/types.h>
 
 #include <climits>
-//#include <openssl/evp.h>
 #include <functional>
 #include <random>
 #include <string>
@@ -24,9 +23,6 @@ class CuckooHasher {
  public:
   CuckooHasher();
   CuckooHasher(Hash hash_function);
-
-  // uint64_t operator()(std::string item) { return hash(item); }
-  // uint64_t operator()(uint64_t item) { return hash(item); }
 
   uint64_t hash(std::string item);
   uint64_t hash(uint64_t item);
