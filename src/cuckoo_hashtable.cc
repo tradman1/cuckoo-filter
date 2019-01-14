@@ -35,9 +35,7 @@ size_t CuckooHashTable::size() {
   return size;
 };
 
-size_t CuckooHashTable::SizeInBytes() {
-  return size()*sizeof(uint16_t);
-}
+size_t CuckooHashTable::SizeInBytes() { return size() * sizeof(uint16_t); }
 
 size_t CuckooHashTable::capacity() { return capacity_; };
 
@@ -90,9 +88,6 @@ uint16_t CuckooHashTable::SwapEntries(uint16_t fingerprint, size_t bucket_idx) {
   uint16_t old_entry = buckets_[bucket_idx].at(i);
   buckets_[bucket_idx].at(i) = fingerprint;
 
-  // std::cout << "swapping fingerprint " << fingerprint << " with " << old_entry
-            // << " at index " << bucket_idx << " whose mod is "
-            // << bucket_idx % NumBuckets() << std::endl;
   return old_entry;
 }
 }  // namespace cuckoofilter
