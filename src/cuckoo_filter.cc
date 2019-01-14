@@ -26,11 +26,11 @@ CuckooFilter<InputType>::CuckooFilter(const int capacity, size_t bits_per_item,
   bits_per_item_ = bits_per_item;
 }
 template <class InputType>
-inline uint32_t CuckooFilter<InputType>::Fingerprint(const InputType &item) {
+inline uint16_t CuckooFilter<InputType>::Fingerprint(const InputType &item) {
   // partial-key cuckoo hashing
   const uint64_t hash_ = hasher_.hash(item);
   // take lower bits_per_item_ bits of hash
-  uint32_t fingerprint = hash_ & ((1ULL << bits_per_item_) - 1);
+  uint16_t fingerprint = hash_ & ((1ULL << bits_per_item_) - 1);
   fingerprint += (fingerprint == 0);
   return fingerprint;
 }
@@ -43,14 +43,14 @@ inline size_t CuckooFilter<InputType>::Index(const InputType &item) {
 
 template <class InputType>
 inline size_t CuckooFilter<InputType>::AltIndex(const size_t index,
-                                                const uint32_t fingerprint) {
+                                                const uint16_t fingerprint) {
   const uint64_t hash_ = hasher_.hash((uint64_t)fingerprint);
   return index ^ hash_;
 }
 
 template <class InputType>
 Status CuckooFilter<InputType>::Insert(const InputType &item) {
-  uint32_t fingerprint = Fingerprint(item);
+  uint16_t fingerprint = Fingerprint(item);
   size_t bucket_idx1 = Index(item);
   size_t bucket_idx2 = AltIndex(bucket_idx1, fingerprint);
 
@@ -61,8 +61,8 @@ Status CuckooFilter<InputType>::Insert(const InputType &item) {
   }
   // must relocate existing items
   size_t bucket_idx = std::rand() % 2 == 0 ? bucket_idx1 : bucket_idx2;
-  uint32_t old_fingerprint = 0;
-  for (uint32_t n = 0; n < MaxNumKicks; n++) {
+  uint16_t old_fingerprint = 0;
+  for (uint16_t n = 0; n < MaxNumKicks; n++) {
     old_fingerprint = table_->SwapEntries(fingerprint, bucket_idx);
     fingerprint = old_fingerprint;
     bucket_idx = AltIndex(bucket_idx, fingerprint);
@@ -76,7 +76,7 @@ Status CuckooFilter<InputType>::Insert(const InputType &item) {
 
 template <class InputType>
 Status CuckooFilter<InputType>::Lookup(const InputType &item) {
-  uint32_t fingerprint = Fingerprint(item);
+  uint16_t fingerprint = Fingerprint(item);
   size_t bucket_idx1 = Index(item);
   size_t bucket_idx2 = AltIndex(bucket_idx1, fingerprint);
 
@@ -91,7 +91,7 @@ Status CuckooFilter<InputType>::Lookup(const InputType &item) {
 
 template <class InputType>
 Status CuckooFilter<InputType>::Delete(const InputType &item) {
-  uint32_t fingerprint = Fingerprint(item);
+  uint16_t fingerprint = Fingerprint(item);
   size_t bucket_idx1 = Index(item);
   size_t bucket_idx2 = AltIndex(bucket_idx1, fingerprint);
 
