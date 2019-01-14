@@ -87,13 +87,12 @@ int main(int argc, char* argv[])
     auto constr_time = NowNanos() - start_time;
 	//Check if string is in filtar
     size_t false_queries = 0;
-	//srand(time(0));
+	srand(time(NULL));
 	//check if in cuckoo filtar
 	for (size_t i = 0; i < total_items; i++) {
         std::string random_string;
         if (algorithm == 1) {
-            cout << (rand() % (genome.length() - k + 1)) << endl;
-            random_string = genome.substr((num_inserted + rand() % (genome.length() - k + 1) - num_inserted), k);
+            random_string = genome.substr((rand() % (genome.length() - k + 1) + 0), k);
         } else {
             random_string = generate_random_string(k);
         }
