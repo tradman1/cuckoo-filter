@@ -17,11 +17,11 @@ CuckooHashTable::CuckooHashTable(size_t capacity) : capacity_(capacity) {
   // for cuckoo filter to work, number of buckets must be power of 2
   n_buckets_ = upperpower2((uint64_t)capacity / bucket_size);
   double load_factor = (double)capacity / n_buckets_ / bucket_size;
-  if (load_factor > 0.95) {
+  if (load_factor > 0.96) {
     n_buckets_ *= 2;
   }
-  std::cout << "Load factor is " << load_factor << std::endl;
-  std::cout << "Number of buckets is: " << n_buckets_ << std::endl;
+  // std::cout << "Load factor is " << load_factor << std::endl;
+  // std::cout << "Number of buckets is: " << n_buckets_ << std::endl;
   buckets_.resize(n_buckets_);  // allocate space for n_buckets buckets
 }
 
@@ -34,6 +34,10 @@ size_t CuckooHashTable::size() {
   }
   return size;
 };
+
+size_t CuckooHashTable::SizeInBytes() {
+  return size()*sizeof(uint32_t);
+}
 
 size_t CuckooHashTable::capacity() { return capacity_; };
 
@@ -86,9 +90,9 @@ uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, size_t bucket_idx) {
   uint32_t old_entry = buckets_[bucket_idx].at(i);
   buckets_[bucket_idx].at(i) = fingerprint;
 
-  std::cout << "swapping fingerprint " << fingerprint << " with " << old_entry
-            << " at index " << bucket_idx << " whose mod is "
-            << bucket_idx % NumBuckets() << std::endl;
+  // std::cout << "swapping fingerprint " << fingerprint << " with " << old_entry
+            // << " at index " << bucket_idx << " whose mod is "
+            // << bucket_idx % NumBuckets() << std::endl;
   return old_entry;
 }
 }  // namespace cuckoofilter

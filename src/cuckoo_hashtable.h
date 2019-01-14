@@ -38,6 +38,7 @@ class CuckooHashTable {
   size_t NumBuckets();
   size_t size();
   size_t capacity();
+  size_t SizeInBytes();
   void printTable();
 
   // returns true if insertion was successful

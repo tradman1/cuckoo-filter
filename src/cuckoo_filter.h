@@ -36,6 +36,7 @@ class CuckooFilter {
   Status Lookup(const InputType &item);
 
   void PrintTable() { table_->printTable(); }
+  size_t SizeInBytes() { return table_->SizeInBytes(); }
 };
 
 }  // namespace cuckoofilter
