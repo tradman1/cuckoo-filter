@@ -27,9 +27,15 @@ CuckooHashTable::CuckooHashTable(size_t capacity) : capacity_(capacity) {
 
 size_t CuckooHashTable::NumBuckets() { return n_buckets_; }
 
-size_t CuckooHashTable::size() { return buckets_.size(); };
+size_t CuckooHashTable::size() {
+  int size = 0;
+  for (int i = 0; i < n_buckets_; ++i) {
+    size += buckets_[i].size();
+  }
+  return size;
+};
 
-size_t CuckooHashTable::capacity() { return buckets_.capacity(); };
+size_t CuckooHashTable::capacity() { return capacity_; };
 
 void CuckooHashTable::printTable() {
   for (int i = 0; i < buckets_.size(); i++) {
@@ -44,7 +50,7 @@ void CuckooHashTable::printTable() {
 };
 
 bool CuckooHashTable::Insert(uint32_t fingerprint, size_t bucket_idx) {
-  bucket_idx %= n_buckets_;
+  bucket_idx &= n_buckets_ - 1;
   if (buckets_[bucket_idx].size() >= bucket_size) {
     return false;
   }
@@ -53,7 +59,7 @@ bool CuckooHashTable::Insert(uint32_t fingerprint, size_t bucket_idx) {
 }
 
 bool CuckooHashTable::Remove(uint32_t fingerprint, size_t bucket_idx) {
-  bucket_idx %= n_buckets_;
+  bucket_idx &= n_buckets_ - 1;
   for (size_t i; i < buckets_[bucket_idx].size(); i++) {
     if (buckets_[bucket_idx][i] == fingerprint) {
       buckets_[bucket_idx].erase(buckets_[bucket_idx].begin() + i);
@@ -64,8 +70,7 @@ bool CuckooHashTable::Remove(uint32_t fingerprint, size_t bucket_idx) {
 }
 
 bool CuckooHashTable::Contains(uint32_t fingerprint, size_t bucket_idx) {
-  bucket_idx %= n_buckets_;
-
+  bucket_idx &= n_buckets_ - 1;
   for (auto entry : buckets_[bucket_idx]) {
     if (entry == fingerprint) {
       return true;
@@ -75,7 +80,7 @@ bool CuckooHashTable::Contains(uint32_t fingerprint, size_t bucket_idx) {
 }
 
 uint32_t CuckooHashTable::SwapEntries(uint32_t fingerprint, size_t bucket_idx) {
-  bucket_idx %= n_buckets_;
+  bucket_idx &= n_buckets_ - 1;
 
   size_t i = std::rand() % buckets_[bucket_idx].size();
   uint32_t old_entry = buckets_[bucket_idx].at(i);
