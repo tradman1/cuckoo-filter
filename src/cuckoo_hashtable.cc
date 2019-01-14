@@ -20,8 +20,6 @@ CuckooHashTable::CuckooHashTable(size_t capacity) : capacity_(capacity) {
   if (load_factor > 0.96) {
     n_buckets_ *= 2;
   }
-  // std::cout << "Load factor is " << load_factor << std::endl;
-  // std::cout << "Number of buckets is: " << n_buckets_ << std::endl;
   buckets_.resize(n_buckets_);  // allocate space for n_buckets buckets
 }
 
