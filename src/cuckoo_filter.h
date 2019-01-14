@@ -23,9 +23,9 @@ class CuckooFilter {
   CuckooHashTable *table_;
   CuckooHasher hasher_;
   size_t bits_per_item_;
-  inline uint32_t Fingerprint(const InputType &item);
+  inline uint16_t Fingerprint(const InputType &item);
   inline size_t Index(const InputType &item);
-  inline size_t AltIndex(size_t bucket_idx, uint32_t fingerprint);
+  inline size_t AltIndex(size_t bucket_idx, uint16_t fingerprint);
 
  public:
   CuckooFilter(const int capacity);

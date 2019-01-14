@@ -18,7 +18,7 @@ class CuckooHashTable {
 
   size_t capacity_;
   size_t n_buckets_;
-  std::vector<std::vector<uint32_t>> buckets_;
+  std::vector<std::vector<uint16_t>> buckets_;
 
   // http://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2Float
   inline size_t upperpower2(size_t x) {
@@ -42,13 +42,13 @@ class CuckooHashTable {
   void printTable();
 
   // returns true if insertion was successful
-  bool Insert(uint32_t fingerprint, size_t bucket_idx);
+  bool Insert(uint16_t fingerprint, size_t bucket_idx);
   // returns true if fingerprsize_t at given index in given bucket was deleted
-  bool Remove(uint32_t fingerprint, size_t bucket_idx);
+  bool Remove(uint16_t fingerprint, size_t bucket_idx);
   // returns true if the bucket at given index contains the fingerprint
-  bool Contains(uint32_t fingerprint, size_t bucket_idx);
+  bool Contains(uint16_t fingerprint, size_t bucket_idx);
   // insert new fingerprsize_t in bucket_idx and return the old fingerprint
-  uint32_t SwapEntries(uint32_t fingerprint, size_t bucket_idx);
+  uint16_t SwapEntries(uint16_t fingerprint, size_t bucket_idx);
 };
 
 }  // namespace cuckoofilter
