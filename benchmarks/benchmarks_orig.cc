@@ -10,7 +10,7 @@
 using cuckoofilter::CuckooFilter;
 
 int main(int argc, char **argv) {
-  size_t total_items = aoi(argv[1]);
+  size_t total_items = atoi(argv[1]);
 
   // Create a cuckoo filter where each item is of type size_t and
   // use 12 bits for each item:
