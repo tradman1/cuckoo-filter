@@ -17,7 +17,6 @@ int main(int argc, char** argv) {
   // Insert items to this cuckoo filter
   size_t num_inserted = 0;
   for (size_t i = 0; i < total_items; i++, num_inserted++) {
-    // std::cout << "inserting item " << i << std::endl;
     if (filter.Insert(i) != Ok) {
       std::cout << "inserted " << 100.0 * num_inserted / total_items
                 << "% items %\n"
@@ -30,14 +29,10 @@ int main(int argc, char** argv) {
 
   auto insert_time = NowNanos() - start_time; 
 
-  // std::cout << "Print table" << std::endl;
-  // filter.PrintTable();
-
   // Check if previously inserted items are in the filter, expected
   // true for all items
   start_time = NowNanos();
   for (size_t i = 0; i < num_inserted; i++) {
-    // std::cout << "looking for item " << i << std::endl;
     assert(filter.Lookup(i) == Ok);
   }
   auto lookup_time = NowNanos() - start_time;
