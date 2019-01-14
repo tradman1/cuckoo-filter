@@ -1,3 +1,4 @@
+//Iva Jurkovic
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -24,7 +25,7 @@ ofstream outFile;
 size_t total_items;
 size_t bits = 12;
 
-//upload string from file 
+//upload genome string from file 
 string upload_genome(string path)
 {
 	string genome = "";
@@ -43,6 +44,7 @@ string upload_genome(string path)
 	return genome;
 }
 
+//Function that generates random string with given length
 std::string generate_random_string (int length)
 {
     auto randchar = []() -> char
@@ -59,19 +61,20 @@ std::string generate_random_string (int length)
 
 int main(int argc, char* argv[])
 {
-	//upload_genome("D:\\3.semestar\\BIOINF\\coli\\GCF_000005845.2_ASM584v2_genomic.fna");
 	int k = atoi(argv[2]);
     int algorithm = atoi(argv[3]);
 	//string genome = upload_genome("/home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna");
-	string genome = upload_genome(argv[1]);
+	//upload genome and divide it into two strings
+    string genome = upload_genome(argv[1]);
 	total_items = genome.length()/2 - k + 1;
     string genome1 = genome.substr(0, genome.length()/2);
     string genome2 = genome.substr(genome.length()/2, genome.length()/2);
-	outFile.open("results_new2.txt", ios::out | ios::app );
+	outFile.open("results.txt", ios::out | ios::app );
 	//outFile << "New test...uploaded genome from file: " << argv[1] << ", k = " << k << ", total_items = " << total_items << ", algorithm = " << algorithm <<endl;
-	CuckooFilter<std::string> filter(total_items, bits, Hash::STL);
+	//generate CuckooFilter
+    CuckooFilter<std::string> filter(total_items, bits, Hash::STL);
     auto start_time = NowNanos();
-    //Fill Cuckoo Filtar
+    //Fill Cuckoo Filter with k-meres
     size_t num_inserted = 0;
     outFile << k << ";" << algorithm << ";";
 	for (size_t i = 0; i < total_items; i++, num_inserted++)
@@ -87,15 +90,16 @@ int main(int argc, char* argv[])
 	}
     outFile << num_inserted << ";" << 100.0 * num_inserted / total_items << ";";
     auto constr_time = NowNanos() - start_time;
-	//Check if string is in filtar
     size_t false_queries = 0;
 	srand(time(NULL));
-	//check if in cuckoo filtar
+	//Check if strings are in cuckoo filter
 	for (size_t i = 0; i < total_items; i++) {
         std::string random_string;
         if (algorithm == 1) {
+            //test with substrings from second part of genome
             random_string = genome2.substr(i, k);
         } else {
+            //test with random generated strings
             random_string = generate_random_string(k);
         }
 		if (filter.Lookup(random_string) == Ok) 
