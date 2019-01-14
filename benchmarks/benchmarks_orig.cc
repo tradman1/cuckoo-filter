@@ -1,5 +1,5 @@
-#include "cuckoofilter.h"
 #include "../benchmarks/timing.h"
+#include "cuckoofilter.h"
 
 #include <assert.h>
 #include <math.h>
