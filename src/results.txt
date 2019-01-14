@@ -1,0 +1,600 @@
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4713%
+Speed: 0.81602 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4306%
+Speed: 0.854627 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4645%
+Speed: 0.588009 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.475%
+Speed: 0.933562 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4807%
+Speed: 1.06793 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4712%
+Speed: 0.58573 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4506%
+Speed: 0.850009 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4783%
+Speed: 0.612487 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.434%
+Speed: 0.812891 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 1
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 19.4488%
+Speed: 0.80565 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.2002%
+Speed: 0.577918 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1688%
+Speed: 1.36083 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1612%
+Speed: 1.3803 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1742%
+Speed: 1.4316 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1617%
+Speed: 1.39493 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1727%
+Speed: 1.4387 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1414%
+Speed: 1.33673 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1604%
+Speed: 1.43725 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1803%
+Speed: 1.4277 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 1
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 79.1531%
+Speed: 1.40797 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.93265%
+Speed: 1.66735 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.92276%
+Speed: 1.40827 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.93039%
+Speed: 1.51404 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.9336%
+Speed: 1.59506 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.90697%
+Speed: 1.44698 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.93802%
+Speed: 1.30487 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.93127%
+Speed: 1.66793 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.9179%
+Speed: 1.55722 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.93194%
+Speed: 1.45743 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 1
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 8.93048%
+Speed: 1.59156 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2502%
+Speed: 1.42719 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2255%
+Speed: 1.41482 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2552%
+Speed: 1.5123 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2374%
+Speed: 1.49326 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2523%
+Speed: 1.44214 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.241%
+Speed: 1.49518 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.25%
+Speed: 1.39897 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2021%
+Speed: 1.52609 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2485%
+Speed: 1.43974 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 1
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 79.2395%
+Speed: 1.34411 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9727%
+Speed: 1.37837 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.933%
+Speed: 1.3181 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9339%
+Speed: 1.38619 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.923%
+Speed: 1.42947 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9341%
+Speed: 1.27992 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9761%
+Speed: 1.38772 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9582%
+Speed: 1.30723 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9269%
+Speed: 1.39725 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9156%
+Speed: 1.21442 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 1
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 72.9605%
+Speed: 1.25578 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0776912%
+Speed: 1.34746 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0770233%
+Speed: 1.34265 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0775404%
+Speed: 1.3431 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0765708%
+Speed: 1.37906 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0806644%
+Speed: 1.35639 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0786607%
+Speed: 1.35698 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0828835%
+Speed: 1.30407 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0783806%
+Speed: 1.32239 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0774973%
+Speed: 1.44403 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 200, total_items = 4641453, algorithm = 2
+Number of inserted: 3365901
+Inserted: 72.5183% items
+False positive rate = 0.0781221%
+Speed: 1.4249 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0863289%
+Speed: 1.40789 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0830972%
+Speed: 1.42047 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0819769%
+Speed: 1.4312 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.085187%
+Speed: 1.37682 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0834634%
+Speed: 1.40649 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0838082%
+Speed: 1.46154 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0853809%
+Speed: 1.41615 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.085898%
+Speed: 1.4312 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0847346%
+Speed: 1.45968 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 100, total_items = 4641553, algorithm = 2
+Number of inserted: 3652602
+Inserted: 78.6935% items
+False positive rate = 0.0855102%
+Speed: 1.41094 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0841951%
+Speed: 1.44058 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0821699%
+Speed: 1.52346 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0836134%
+Speed: 1.37358 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0865003%
+Speed: 1.53306 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0848414%
+Speed: 1.48453 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0862202%
+Speed: 1.4723 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0851645%
+Speed: 1.4739 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0832902%
+Speed: 1.45726 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0865003%
+Speed: 1.38581 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 50, total_items = 4641603, algorithm = 2
+Number of inserted: 3652347
+Inserted: 78.6872% items
+False positive rate = 0.0848629%
+Speed: 1.33682 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00857457%
+Speed: 1.45914 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00941479%
+Speed: 1.49544 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00922089%
+Speed: 1.41125 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.0086392%
+Speed: 1.27972 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00868229%
+Speed: 1.57482 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00846685%
+Speed: 1.4585 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00825141%
+Speed: 1.48894 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00928553%
+Speed: 1.2972 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.00853148%
+Speed: 1.55322 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 20, total_items = 4641633, algorithm = 2
+Number of inserted: 375247
+Inserted: 8.08437% items
+False positive rate = 0.0086392%
+Speed: 1.45358 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.2667%
+Speed: 1.57385 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.25993%
+Speed: 1.52351 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.25646%
+Speed: 1.61545 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.26685%
+Speed: 1.14215 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.28617%
+Speed: 1.44649 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.2785%
+Speed: 1.59871 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.26708%
+Speed: 1.2434 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.27017%
+Speed: 1.67526 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.25521%
+Speed: 1.60657 million keys/sec
+
+New test...uploaded genome from file: /home/jiva26/Documents/bioinf/GCF_000005845.2_ASM584v2_genomic.fna, k = 10, total_items = 4641643, algorithm = 2
+Number of inserted: 108333
+Inserted: 2.33394% items
+False positive rate = 9.26588%
+Speed: 1.6389 million keys/sec
+
