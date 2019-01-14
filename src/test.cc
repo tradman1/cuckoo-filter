@@ -1,14 +1,14 @@
 #include <assert.h>
 #include <iostream>
+#include "cuckoo_filter.cc"
 #include "cuckoo_filter.h"
 #include "cuckoo_hasher.h"
 #include "cuckoo_hashtable.h"
-#include "cuckoo_filter.cc"
 
 using namespace cuckoofilter;
 
 int main() {
-  size_t total_items = 1000;
+  size_t total_items = 1000000;
   CuckooFilter<size_t> filter(total_items);
 
   // Insert items to this cuckoo filter
