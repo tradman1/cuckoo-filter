@@ -24,17 +24,17 @@ To build the main program for genome testing:
 $ make main
 ```
 
-Cuckoo filter can be tested with command ./main in terminal with next parametrs:
+Cuckoo filter can be tested with by running main in the terminal with the following parametrs:
     • Apsolute path to genome txt:string 
     • Length of k-meres:int
     • Algorithm:int (it represents wheater lookup will be done with random generated strings or substrings from uploaded genome):
-            ▪ 1 – substrings from genome 
-            ▪ else – random strings  
-    Program will generate output .txt file that will write :
-            ▪ Number of inserted substrings
-            ▪ Percentage of inserted substrings
-            ▪ Percentage of false positive rates
-            ▪ Execution speed 
+        *   1 – substrings from genome 
+        *   else – random strings  
+The program will generate an output .txt file that will have:
+        *   Number of inserted substrings
+        *   Percentage of inserted substrings
+        *   Percentage of false positive rates
+        *   Execution speed 
 
 Authors
 -------
