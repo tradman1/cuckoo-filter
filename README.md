@@ -30,6 +30,9 @@ Cuckoo filter can be tested with by running main in the terminal with the follow
 *   Algorithm:int (it represents wheater lookup will be done with random generated strings or substrings from uploaded genome):
     *   1 – substrings from genome 
     *   else – random strings
+    
+test.cc and benchmark.cc are run with following parameter:
+*    Number of inserted elements: int
 
 The program will generate an output .txt file that will have:
    *   Number of inserted substrings
