@@ -7,8 +7,8 @@
 
 using namespace cuckoofilter;
 
-int main() {
-  size_t total_items = 1000000;
+int main(int argc, char** argv) {
+  size_t total_items = atoi(argv[1]);
   CuckooFilter<size_t> filter(total_items);
 
   // Insert items to this cuckoo filter
