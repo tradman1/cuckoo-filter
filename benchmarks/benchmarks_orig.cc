@@ -1,3 +1,6 @@
+//
+// Tome Radman
+//
 #include "../benchmarks/timing.h"
 #include "cuckoofilter.h"
 
