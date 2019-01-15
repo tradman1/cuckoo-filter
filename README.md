@@ -29,7 +29,8 @@ Cuckoo filter can be tested with by running main in the terminal with the follow
 *   Length of k-meres:int
 *   Algorithm:int (it represents wheater lookup will be done with random generated strings or substrings from uploaded genome):
     *   1 – substrings from genome 
-    *   else – random strings  
+    *   else – random strings
+
 The program will generate an output .txt file that will have:
    *   Number of inserted substrings
    *   Percentage of inserted substrings
