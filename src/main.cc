@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
     string genome1 = genome.substr(0, genome.length()/2);
     string genome2 = genome.substr(genome.length()/2, genome.length()/2);
 	outFile.open("results.txt", ios::out | ios::app );
-	//outFile << "New test...uploaded genome from file: " << argv[1] << ", k = " << k << ", total_items = " << total_items << ", algorithm = " << algorithm <<endl;
+	outFile << "New test...uploaded genome from file: " << argv[1] << ", k = " << k << ", total_items = " << total_items << ", algorithm = " << algorithm <<endl;
 	//generate CuckooFilter
     CuckooFilter<std::string> filter(total_items, bits, Hash::STL);
     auto start_time = NowNanos();
@@ -83,12 +83,12 @@ int main(int argc, char* argv[])
 		//std::cout << k_substring << "\n";
 		if (filter.Insert(k_substring) != Ok)
 		{
-            //outFile << "Number of inserted: " << num_inserted << endl;
-			//outFile << "Inserted: " << 100.0 * num_inserted / total_items << "% items" << endl;
-            break;
+             break;
 		}
 	}
-    outFile << num_inserted << ";" << 100.0 * num_inserted / total_items << ";";
+    outFile << "Number of inserted: " << num_inserted << endl;
+	outFile << "Inserted: " << 100.0 * num_inserted / total_items << "% items" << endl;
+    //outFile << num_inserted << ";" << 100.0 * num_inserted / total_items << ";";
     auto constr_time = NowNanos() - start_time;
     size_t false_queries = 0;
 	srand(time(NULL));
@@ -107,11 +107,10 @@ int main(int argc, char* argv[])
 			false_queries++;
     	}
 	}
-	//outFile << "False positive rate = " << 100.0 * false_queries / total_items << "%\n";
+	outFile << "False positive rate = " << (float) false_queries / num_inserted * 100.0 << "%\n";
 	const auto time = constr_time / static_cast<double>(1000 * 1000 * 1000);
-    //outFile << "Speed: " << (num_inserted / time) / (1000 * 1000) << " million keys/sec" << endl;
-    //cout << (float) false_queries / num_inserted * 100;
-    outFile << (float) false_queries / num_inserted * 100 << ";" << (num_inserted / time) / (1000 * 1000) << endl;
-    //outFile << "" << endl;
+    outFile << "Speed: " << (num_inserted / time) / (1000 * 1000) << " million keys/sec" << endl;
+    //outFile << (float) false_queries / num_inserted * 100 << ";" << (num_inserted / time) / (1000 * 1000) << endl;
+    outFile << "" << endl;
     return 0;
 }
