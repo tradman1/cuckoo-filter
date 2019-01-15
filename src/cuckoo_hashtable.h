@@ -1,3 +1,6 @@
+//
+// author: Tome Radman
+//
 #include <stdint.h>
 #include <stdlib.h>
 #include <sys/types.h>
