@@ -24,6 +24,11 @@ To build the main program for genome testing:
 $ make main
 ```
 
+Run
+------
+test and benchmark are run with following parameter:
+*    Number of inserted elements: int
+
 Cuckoo filter can be tested with by running main in the terminal with the following parametrs:
 *   Apsolute path to genome txt:string 
 *   Length of k-meres:int
@@ -31,8 +36,7 @@ Cuckoo filter can be tested with by running main in the terminal with the follow
     *   1 – substrings from genome 
     *   else – random strings
     
-test.cc and benchmark.cc are run with following parameter:
-*    Number of inserted elements: int
+
 
 The program will generate an output .txt file that will have:
    *   Number of inserted substrings
