@@ -9,20 +9,32 @@ Cuckoo filter is a Bloom filter replacement for approximated set-membership quer
 Build
 -------
 
-To build the example (example/test.cc):
+To build the example test:
 ```bash
 $ make test
 ```
 
-To build the benchmarks::
+To build the benchmarks:
 ```bash
 $ make benchmark
 ```
 
-To build the benchmarks::
+To build the main program for genome testing:
 ```bash
-$ make benchmark
+$ make main
 ```
+
+Cuckoo filter can be tested with command ./main in terminal with next parametrs:
+    • Apsolute path to genome txt:string 
+    • Length of k-meres:int
+    • Algorithm:int (it represents wheater lookup will be done with random generated strings or substrings from uploaded genome):
+            ▪ 1 – substrings from genome 
+            ▪ else – random strings  
+    Program will generate output .txt file that will write :
+            ▪ Number of inserted substrings
+            ▪ Percentage of inserted substrings
+            ▪ Percentage of false positive rates
+            ▪ Execution speed 
 
 Authors
 -------
