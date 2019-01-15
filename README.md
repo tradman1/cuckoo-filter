@@ -3,3 +3,29 @@
 Implementation of [Cuckoo Filter](https://www.cs.cmu.edu/~dga/papers/cuckoo-conext2014.pdf), a probabilistic data structure used for fast set membership testing.
 
 This is a project for Bionformatics course at FER, University of Zagreb. You can visit the course website [here](https://www.fer.unizg.hr/predmet/bio).
+
+Cuckoo filter is a Bloom filter replacement for approximated set-membership queries. Unlike Bloom filter, Cuckoo ﬁlters provide the ﬂexibility to add and remove items dynamically. A cuckoo filter is based on cuckoo hashing and it is essentially a cuckoo hash table storing each key's fingerprint. Cuckoo hash tables can be highly compact and can use less space than Bloom ﬁlters, which is useful for applications that require low false positive rates.
+
+Build
+-------
+
+To build the example (example/test.cc):
+```bash
+$ make test
+```
+
+To build the benchmarks::
+```bash
+$ make benchmark
+```
+
+To build the benchmarks::
+```bash
+$ make benchmark
+```
+
+Authors
+-------
+- Iva Jurković [Jiva26](https://github.com/Jiva26)
+- Tome Radman [tradman1](https://github.com/tradman1)
+- Antonio Šajatović [asajatovic](https://github.com/asajatovic)
