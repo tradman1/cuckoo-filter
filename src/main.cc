@@ -4,11 +4,12 @@
 #include <iomanip>
 #include <vector>
 #include <cstdlib>
-#include <string>
 #include <ctime>
+#include <fstream>
 #include <functional>
-#include <algorithm> 
-#include <assert.h>
+#include <iostream>
+#include <string>
+#include "cuckoo_filter.cc"
 #include "cuckoo_filter.h"
 #include "cuckoo_hasher.h"
 #include "cuckoo_hashtable.h"

@@ -1,3 +1,6 @@
+//
+// author: Tome Radman
+//
 #include "cuckoo_hashtable.h"
 #include <assert.h>
 #include <stdint.h>
@@ -20,8 +23,6 @@ CuckooHashTable::CuckooHashTable(size_t capacity) : capacity_(capacity) {
   if (load_factor > 0.96) {
     n_buckets_ *= 2;
   }
-  // std::cout << "Load factor is " << load_factor << std::endl;
-  // std::cout << "Number of buckets is: " << n_buckets_ << std::endl;
   buckets_.resize(n_buckets_);  // allocate space for n_buckets buckets
 }
 
@@ -35,9 +36,7 @@ size_t CuckooHashTable::size() {
   return size;
 };
 
-size_t CuckooHashTable::SizeInBytes() {
-  return size()*sizeof(uint16_t);
-}
+size_t CuckooHashTable::SizeInBytes() { return size() * sizeof(uint16_t); }
 
 size_t CuckooHashTable::capacity() { return capacity_; };
 
@@ -90,9 +89,6 @@ uint16_t CuckooHashTable::SwapEntries(uint16_t fingerprint, size_t bucket_idx) {
   uint16_t old_entry = buckets_[bucket_idx].at(i);
   buckets_[bucket_idx].at(i) = fingerprint;
 
-  // std::cout << "swapping fingerprint " << fingerprint << " with " << old_entry
-            // << " at index " << bucket_idx << " whose mod is "
-            // << bucket_idx % NumBuckets() << std::endl;
   return old_entry;
 }
 }  // namespace cuckoofilter
