@@ -1,3 +1,6 @@
+//
+// author: Tome Radman
+//
 #include "cuckoo_hashtable.h"
 #include <assert.h>
 #include <stdint.h>

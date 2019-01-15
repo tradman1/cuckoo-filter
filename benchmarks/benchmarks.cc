@@ -1,3 +1,6 @@
+//
+// Tome Radman
+//
 #include <assert.h>
 #include <iostream>
 #include "../src/cuckoo_filter.h"
