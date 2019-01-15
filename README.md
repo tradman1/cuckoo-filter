@@ -31,10 +31,10 @@ Cuckoo filter can be tested with by running main in the terminal with the follow
     *   1 – substrings from genome 
     *   else – random strings  
 The program will generate an output .txt file that will have:
-        *   Number of inserted substrings
-        *   Percentage of inserted substrings
-        *   Percentage of false positive rates
-        *   Execution speed 
+   *   Number of inserted substrings
+   *   Percentage of inserted substrings
+   *   Percentage of false positive rates
+   *   Execution speed 
 
 Authors
 -------
