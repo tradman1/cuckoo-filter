@@ -30,7 +30,7 @@ size_t CuckooHashTable::NumBuckets() { return n_buckets_; }
 
 size_t CuckooHashTable::size() {
   int size = 0;
-  for (int i = 0; i < n_buckets_; ++i) {
+  for (size_t i = 0; i < n_buckets_; ++i) {
     size += buckets_[i].size();
   }
   return size;
@@ -41,7 +41,7 @@ size_t CuckooHashTable::SizeInBytes() { return size() * sizeof(uint16_t); }
 size_t CuckooHashTable::capacity() { return capacity_; };
 
 void CuckooHashTable::printTable() {
-  for (int i = 0; i < buckets_.size(); i++) {
+  for (size_t i = 0; i < buckets_.size(); i++) {
     std::cout << i << ": ";
     if (buckets_[i].size() > 0) {
       for (auto y : buckets_[i]) {
